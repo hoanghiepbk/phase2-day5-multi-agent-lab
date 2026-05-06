@@ -1,0 +1,94 @@
+[
+  {
+    "name": "supervisor.route",
+    "duration_seconds": 0.0,
+    "status": "ok",
+    "attributes": {
+      "decision_at_iteration": 0,
+      "iteration_after": 1,
+      "next": "researcher",
+      "has_research": false,
+      "has_analysis": false,
+      "has_final": false
+    }
+  },
+  {
+    "name": "researcher",
+    "duration_seconds": 4.076208099955693,
+    "status": "ok",
+    "attributes": {
+      "query": "Summarize production guardrails for LLM agents"
+    }
+  },
+  {
+    "name": "supervisor.route",
+    "duration_seconds": 0.0,
+    "status": "ok",
+    "attributes": {
+      "decision_at_iteration": 1,
+      "iteration_after": 2,
+      "next": "analyst",
+      "has_research": true,
+      "has_analysis": false,
+      "has_final": false
+    }
+  },
+  {
+    "name": "analyst",
+    "duration_seconds": 7.491455799899995,
+    "status": "ok",
+    "attributes": {
+      "has_notes": true
+    }
+  },
+  {
+    "name": "supervisor.route",
+    "duration_seconds": 0.0,
+    "status": "ok",
+    "attributes": {
+      "decision_at_iteration": 2,
+      "iteration_after": 3,
+      "next": "writer",
+      "has_research": true,
+      "has_analysis": true,
+      "has_final": false
+    }
+  },
+  {
+    "name": "writer",
+    "duration_seconds": 8.206479400163516,
+    "status": "ok",
+    "attributes": {
+      "audience": "technical learners"
+    }
+  },
+  {
+    "name": "supervisor.route",
+    "duration_seconds": 0.0,
+    "status": "ok",
+    "attributes": {
+      "decision_at_iteration": 3,
+      "iteration_after": 4,
+      "next": "done",
+      "has_research": true,
+      "has_analysis": true,
+      "has_final": true
+    }
+  },
+  {
+    "name": "critic",
+    "duration_seconds": 3.260001540184021e-05,
+    "status": "ok",
+    "attributes": {
+      "has_final": true
+    }
+  },
+  {
+    "name": "workflow",
+    "duration_seconds": 19.774315600050613,
+    "status": "ok",
+    "attributes": {
+      "query": "Summarize production guardrails for LLM agents"
+    }
+  }
+]
