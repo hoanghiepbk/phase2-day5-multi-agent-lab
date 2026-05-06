@@ -6,3 +6,13 @@ def test_report_renders_markdown() -> None:
     report = render_markdown_report([BenchmarkMetrics(run_name="baseline", latency_seconds=1.23)])
     assert "Benchmark Report" in report
     assert "baseline" in report
+
+
+def test_report_includes_author_header() -> None:
+    report = render_markdown_report(
+        [BenchmarkMetrics(run_name="baseline", latency_seconds=1.0)],
+        author="Test Author",
+        student_id="X1234",
+    )
+    assert "Test Author" in report
+    assert "X1234" in report

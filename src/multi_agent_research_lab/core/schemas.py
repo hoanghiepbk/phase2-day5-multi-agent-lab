@@ -34,8 +34,14 @@ class SourceDocument(BaseModel):
 
 
 class BenchmarkMetrics(BaseModel):
+    """Comparable metrics for a single (run_name, query) measurement."""
+
     run_name: str
+    query: str = ""
     latency_seconds: float
     estimated_cost_usd: float | None = None
     quality_score: float | None = Field(default=None, ge=0, le=10)
+    citation_coverage: float | None = Field(default=None, ge=0, le=1)
+    failure: bool = False
+    iterations: int = 0
     notes: str = ""

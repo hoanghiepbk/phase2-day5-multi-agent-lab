@@ -1,7 +1,8 @@
 """Base agent contract.
 
-The concrete agent classes intentionally contain TODOs. The goal is to force students
-to make design decisions instead of receiving a finished implementation.
+Every concrete agent implements ``run(state) -> state``. Agents read the fields they
+depend on and write only the fields they own; coordination lives in the workflow,
+not in the agents.
 """
 
 from abc import ABC, abstractmethod

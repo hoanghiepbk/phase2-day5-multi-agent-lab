@@ -1,6 +1,9 @@
-# Lab 20: Multi-Agent Research System Starter
+# Lab 20: Multi-Agent Research System
 
-Starter repo cho bài lab **Multi-Agent Systems**: xây dựng hệ thống nghiên cứu gồm **Supervisor + Researcher + Analyst + Writer** và benchmark với single-agent baseline.
+- **Author:** Phạm Hữu Hoàng Hiệp
+- **Student ID:** 2A202600415
+
+Bài lab **Multi-Agent Systems**: xây dựng hệ thống nghiên cứu gồm **Supervisor + Researcher + Analyst + Writer** và benchmark với single-agent baseline.
 
 > Mục tiêu của repo này là cung cấp **production-grade skeleton** để học viên phát triển code cá nhân. Các phần logic quan trọng được để ở dạng `TODO` để học viên tự triển khai.
 
@@ -142,10 +145,27 @@ Các phần học viên cần tự làm:
 
 Học viên nộp:
 
-1. GitHub repo cá nhân.
-2. Screenshot trace hoặc link trace.
-3. `reports/benchmark_report.md` so sánh single vs multi-agent.
-4. Một đoạn giải thích failure mode và cách fix.
+1. GitHub repo cá nhân — toàn bộ code trong repo này.
+2. Screenshot trace hoặc link trace — [`reports/trace_last_run.json`](reports/trace_last_run.json) (regen bằng `cli multi-agent --save-trace` hoặc `cli benchmark`).
+3. [`reports/benchmark_report.md`](reports/benchmark_report.md) so sánh single vs multi-agent (regen bằng `cli benchmark`).
+4. [`reports/failure_modes.md`](reports/failure_modes.md) — 4 failure mode + cách fix đã wire trong code.
+
+### Regenerate deliverables
+
+```bash
+# từ repo root, không cần API key (chạy ở mock mode)
+PYTHONPATH=src python -m multi_agent_research_lab.cli benchmark
+```
+
+Lệnh trên ghi đè `reports/benchmark_report.md` + `reports/trace_last_run.json`. Khi
+có `OPENAI_API_KEY` (và optional `TAVILY_API_KEY`), chạy lại lệnh tương tự để có
+metric thật từ provider.
+
+### Design notes
+
+Xem [docs/design_template.md](docs/design_template.md) — đã điền đầy đủ Problem,
+Why multi-agent, Agent roles, Shared state, Routing policy, Guardrails, Benchmark
+plan.
 
 ## References
 
